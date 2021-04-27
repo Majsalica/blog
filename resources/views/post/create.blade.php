@@ -1,6 +1,15 @@
 @extends('main')
 @section('title', 'Create post')
 @section('content')
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <h3>Create post</h3>
     <hr>
     <form method="post" action="{{ route('store-post') }}">

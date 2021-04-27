@@ -2,6 +2,15 @@
 @section('title', 'Login')
 @section('content')
     <div class="col-md-8 offset-2">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <h3>Login</h3>
         <hr>
         <form method="post" action="{{ route('login-user') }}">

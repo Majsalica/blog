@@ -1,6 +1,15 @@
 @extends('main')
 @section('title', 'Edit post')
 @section('content')
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <h3>Edit post</h3>
     <hr>
     <form method="post" action="{{ route('update-post', ['post' => $post]) }}">
