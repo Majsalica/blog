@@ -24,10 +24,12 @@ Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
 
 // Post routes
-Route::get('/posts', [PostController::class, 'index'])->name('posts');
-Route::get('/create-post', [PostController::class, 'create'])->name('create-post');
-Route::post('/create-post', [PostController::class, 'store'])->name('store-post');
-Route::get('/show-post/{post}', [PostController::class, 'show'])->name('show-post');
-Route::get('/edit-posts/{post}', [PostController::class, 'edit'])->name('edit-post');
-Route::patch('/edit-posts/{post}', [PostController::class, 'update'])->name('update-post');
-Route::get('/destroy-post/{post}', [PostController::class, 'destroy'])->name('destroy-post');
+Route::middleware('auth')->group(function () {
+    Route::get('/posts', [PostController::class, 'index'])->name('posts');
+    Route::get('/create-post', [PostController::class, 'create'])->name('create-post');
+    Route::post('/create-post', [PostController::class, 'store'])->name('store-post');
+    Route::get('/show-post/{post}', [PostController::class, 'show'])->name('show-post');
+    Route::get('/edit-posts/{post}', [PostController::class, 'edit'])->name('edit-post');
+    Route::patch('/edit-posts/{post}', [PostController::class, 'update'])->name('update-post');
+    Route::get('/destroy-post/{post}', [PostController::class, 'destroy'])->name('destroy-post');
+});
