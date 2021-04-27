@@ -96,6 +96,6 @@ class UserController extends Controller
     public function logout(): RedirectResponse
     {
         Auth::logout();
-        return redirect()->route('posts');
+        return redirect()->route('login');
     }
 }
