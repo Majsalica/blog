@@ -16,11 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Login & Registration routes
-Route::get('/', [UserController::class, 'showLoginForm']);
-Route::get('/login', [UserController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [UserController::class, 'login'])->name('login-user');
+Route::get('/', [UserController::class, 'showLoginForm'])->name('login');
+Route::post('/', [UserController::class, 'login'])->name('login-user');
 Route::get('/register', [UserController::class, 'showRegistrationForm'])->name('register');
-Route::post('/login', [UserController::class, 'register'])->name('register-user');
+Route::post('/register', [UserController::class, 'register'])->name('register-user');
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
 
