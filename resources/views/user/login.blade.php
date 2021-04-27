@@ -14,6 +14,7 @@
         <h3>Login</h3>
         <hr>
         <form method="post" action="{{ route('login-user') }}">
+            @csrf
             <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
                 <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter your email">

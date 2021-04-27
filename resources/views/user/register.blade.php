@@ -14,6 +14,7 @@
         <h3>Register</h3>
         <hr>
         <form method="post" action="{{ route('register-user') }}">
+            @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">

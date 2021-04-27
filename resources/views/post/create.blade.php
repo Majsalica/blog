@@ -13,6 +13,7 @@
     <h3>Create post</h3>
     <hr>
     <form method="post" action="{{ route('store-post') }}">
+        @csrf
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" class="form-control" id="title" name="title" placeholder="Enter your title">

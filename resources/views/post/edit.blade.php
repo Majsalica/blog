@@ -13,6 +13,8 @@
     <h3>Edit post</h3>
     <hr>
     <form method="post" action="{{ route('update-post', ['post' => $post]) }}">
+        @csrf
+        @method('patch')
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" class="form-control" id="title" name="title" value="{{ $post->title }}">
