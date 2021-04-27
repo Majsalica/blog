@@ -6,25 +6,24 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        User
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        @if(\Illuminate\Support\Facades\Auth::check())
-                            <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
-                        @else
-                            <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
-                            <li><a class="dropdown-item" href="{{ route('register') }}">Register</a></li>
-                        @endif
-                    </ul>
-                </li>
+                @if(\Illuminate\Support\Facades\Auth::check())
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ route('posts') }}">All posts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('create-post') }}">Create post</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{{ route('logout') }}">Logout</a>
+                    </li>
+                @else
+                    <li>
+                        <a class="dropdown-item" href="{{ route('login') }}">Login</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{{ route('register') }}">Register</a>
+                    </li>
+                @endif
             </ul>
         </div>
     </div>
