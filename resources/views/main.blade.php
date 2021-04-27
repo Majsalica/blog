@@ -11,6 +11,8 @@
     <title>@yield('title')</title>
 </head>
 <body>
+@include('navigation')
+<br>
 <div class="container">
     @yield('content')
 </div>
