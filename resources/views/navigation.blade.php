@@ -18,10 +18,10 @@
                     </li>
                 @else
                     <li>
-                        <a class="dropdown-item" href="{{ route('login') }}">Login</a>
+                        <a class="nav-link" href="{{ route('login') }}">Login</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="{{ route('register') }}">Register</a>
+                        <a class="nav-link" href="{{ route('register') }}">Register</a>
                     </li>
                 @endif
             </ul>
