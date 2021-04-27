@@ -8,7 +8,7 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 @if(\Illuminate\Support\Facades\Auth::check())
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('posts') }}">All posts</a>
+                        <a class="nav-link" href="{{ route('posts') }}">All posts</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('create-post') }}">Create post</a>
