@@ -50,7 +50,7 @@ class UserController extends Controller
 
         return redirect()
             ->back()
-            ->withErrors(['user', 'No such user in our records!']);
+            ->withErrors(['No such user in our records!']);
     }
 
     /**
