@@ -41,7 +41,7 @@ class UserController extends Controller
             ->first();
 
         if ($user instanceof User) {
-            $match = Hash::check($request->input('email'), $user->password);
+            $match = Hash::check($request->input('password'), $user->password);
             if ($match) {
                 Auth::login($user);
                 return redirect()->route('posts');
