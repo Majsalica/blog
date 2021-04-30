@@ -22,7 +22,7 @@
             </div>
         @endforeach
     @else
-        <h3>You ain't no post creator here!</h3>
+        <h3>You ain't no post creator here! Ain't no cats here!</h3>
     @endif
 @endsection
 
