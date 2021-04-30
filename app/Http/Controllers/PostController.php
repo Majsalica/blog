@@ -8,6 +8,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -48,6 +49,7 @@ class PostController extends Controller
         $post = new Post();
         $post->title = $request->input('title');
         $post->content = $request->input('content');
+        $post->user_id = Auth::id();
         $post->save();
 
         return redirect()->route('posts');
@@ -107,5 +109,18 @@ class PostController extends Controller
     {
         $post->delete();
         return redirect()->route('posts');
+    }
+
+    /**
+     * User's posts
+     * @return Application|Factory|View
+     */
+    public function userPosts()
+    {
+        $posts = Post::query()
+            ->where('user_id', '=', Auth::id())
+            ->get();
+
+        return \view('post.userPosts', ['posts' => $posts]);
     }
 }

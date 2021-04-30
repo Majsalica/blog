@@ -1,5 +1,5 @@
 @extends('main')
-@section('title', 'All posts')
+@section('title', 'My posts')
 @section('content')
     @if($posts->isNotEmpty())
         @foreach($posts as $post)
@@ -11,10 +11,8 @@
                     <h5 class="card-title">{{ $post->title }}</h5>
                     <p class="card-text">{{ $post->content }}</p>
                     <a href="{{ route('show-post', ['post' => $post]) }}" class="btn btn-outline-primary">Show</a>
-                    @if($post->user_id == \Illuminate\Support\Facades\Auth::id())
-                        <a href="{{ route('edit-post', ['post' => $post]) }}" class="btn btn-outline-secondary">Edit</a>
-                        <a href="{{ route('destroy-post', ['post' => $post]) }}" class="btn btn-outline-danger">Delete</a>
-                    @endif
+                    <a href="{{ route('edit-post', ['post' => $post]) }}" class="btn btn-outline-secondary">Edit</a>
+                    <a href="{{ route('destroy-post', ['post' => $post]) }}" class="btn btn-outline-danger">Delete</a>
                 </div>
                 <div class="card-footer">
                     Updated at: {{ $post->updated_at }}
@@ -24,6 +22,7 @@
             </div>
         @endforeach
     @else
-        <h3>Ain't no posts here!</h3>
+        <h3>You ain't no post creator here! Ain't no cats here!</h3>
     @endif
 @endsection
+

@@ -11,6 +11,9 @@
                         <a class="nav-link" href="{{ route('posts') }}">All posts</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('user-posts') }}">My posts</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('create-post') }}">Create post</a>
                     </li>
                     <li>
