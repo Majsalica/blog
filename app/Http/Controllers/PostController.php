@@ -110,4 +110,17 @@ class PostController extends Controller
         $post->delete();
         return redirect()->route('posts');
     }
+
+    /**
+     * User's posts
+     * @return Application|Factory|View
+     */
+    public function userPosts()
+    {
+        $posts = Post::query()
+            ->where('user_id', '=', Auth::id())
+            ->get();
+
+        return \view('post.userPosts', ['posts' => $posts]);
+    }
 }
