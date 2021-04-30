@@ -16,6 +16,8 @@
                 </div>
                 <div class="card-footer">
                     Updated at: {{ $post->updated_at }}
+                    <br>
+                    Created by: {{ $post->user->name }}
                 </div>
             </div>
         @endforeach
