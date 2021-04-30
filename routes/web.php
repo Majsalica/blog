@@ -32,4 +32,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit-posts/{post}', [PostController::class, 'edit'])->name('edit-post');
     Route::patch('/edit-posts/{post}', [PostController::class, 'update'])->name('update-post');
     Route::get('/destroy-post/{post}', [PostController::class, 'destroy'])->name('destroy-post');
+    Route::get('/user-posts', [PostController::class, 'userPosts'])->name('user-posts');
 });
